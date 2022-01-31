@@ -1,0 +1,22 @@
+.accordian-container {
+    /* height: 7vh; */
+    width: 70vw;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.player-item{
+    margin: 5vh 0;
+    width: 100%;
+    box-shadow: 1px 1px 1px -1px;
+}
+.hide-show-icon{
+    float: right;
+}
+.player-desc-hid{
+display:none;
+}
+.player-desc-vis{
+    display:revert;
+    }

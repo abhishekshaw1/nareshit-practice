@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import Accordion from "./components/Accordion"
 
+let data = [ {
+  name: "sachin" ,
+  desc : "Sachin Ramesh Tendulkar is an Indian former international cricketer who captained the Indian national team. He is regarded as one of the greatest batsmen in the history of cricket"
+},
+{
+  name: "virat" ,
+  desc : "Virat Kohli is an Indian international cricketer and former captain of the Indian national team. He plays for Delhi in domestic cricket and Royal Challengers Bangalore in the Indian Premier League as a right-handed batsman."
+},
+{
+  name: "dhoni" ,
+  desc : "Mahendra Singh Dhoni, is a former international cricketer who captained the Indian national cricket team in limited-overs formats from 2007 to 2017 and in Test cricket from 2008 to 2014. He is currently the captain of Chennai Super Kings, a franchise based team of Indian Premier League."
+}
+ ]
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Accordion data={data} />
     </div>
   );
 }
