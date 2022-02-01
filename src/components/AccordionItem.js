@@ -9,7 +9,7 @@ const AccordionItem = (props) => {
     }
     return (
         <>
-        <div onClick={handleShow} className="player-item">
+        <div  onClick={handleShow} className="player-item">
             <span>{props.data.name}</span>
             <span className="hide-show-icon">
                 {showItem ? "hide details " : "show details"}
