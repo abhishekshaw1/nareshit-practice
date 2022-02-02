@@ -1,0 +1,23 @@
+.modal-container {
+    width: 230px;
+    height: 247px;
+    padding: 10px;
+    border: 1px solid black;
+    z-index: 1;
+    position: absolute;
+    /* top: 9%; */
+    left: 1%;
+    color: cornflowerblue;
+    background: white;
+    animation: mymove 2s ;
+    animation-timing-function: ease;
+}
+.mdl-btn{
+    margin: 10px;
+}
+
+@keyframes mymove {
+    from {left : -10%;
+        }
+    to {left: 2% ;}
+  }

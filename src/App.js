@@ -1,6 +1,7 @@
 import './App.css';
 import Accordion from "./components/Accordion" 
 import SlideShow from "./components/SlideShow"
+import Modal from "./components/modal/Modal"
 
 let data = [ {
   name: "sachin" ,
@@ -18,6 +19,7 @@ let data = [ {
 function App() {
   return (
     <div>
+      <Modal />
       <SlideShow />
       <Accordion data={data} />
     </div>
