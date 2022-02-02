@@ -1,21 +1,17 @@
-import React , {useState }from "react"
+import React from "react"
 
 const AccordionItem = (props) => {
-    const [showItem, setShowItem ] =  useState(false) ;
-
-    const handleShow = () => {
-        console.log("handelShow called !!");
-        setShowItem(!showItem) ;
-    }
+    
+    const {data, index, handleShow ,showItem} = props ;
     return (
         <>
-        <div  onClick={handleShow} className="player-item">
-            <span>{props.data.name}</span>
+        <div id={index} onClick={handleShow} className={`player-item ${showItem ? "active" : ""}`}>
+            <span>{data.name}</span>
             <span className="hide-show-icon">
                 {showItem ? "hide details " : "show details"}
             </span>
-            <div className={showItem ? "player-desc-vis" : "player-desc-hid"}>
-                <p>{props.data.desc}</p>
+            <div>
+                {showItem ? <p>{data.desc}</p> : null}
             </div>
         </div>
         </>

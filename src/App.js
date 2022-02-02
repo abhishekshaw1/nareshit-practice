@@ -1,5 +1,6 @@
 import './App.css';
-import Accordion from "./components/Accordion"
+import Accordion from "./components/Accordion" 
+import SlideShow from "./components/SlideShow"
 
 let data = [ {
   name: "sachin" ,
@@ -17,6 +18,7 @@ let data = [ {
 function App() {
   return (
     <div>
+      <SlideShow />
       <Accordion data={data} />
     </div>
   );

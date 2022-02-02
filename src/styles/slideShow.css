@@ -1,0 +1,38 @@
+.slideShow-Container{
+    width: 70vw;
+    height: 40vh;
+    border: 1px solid red ;
+    position: relative;
+}
+.player-slideshow-hidden {display: none}
+img {vertical-align: middle;}
+.player-slideshow {
+    height: 91%;
+    width: 100%;
+}
+.player-slideshow img {
+    height: 100%;
+    width: 100%;
+}
+.previous {
+    position: absolute;
+    width:auto;
+    top: 19vh;
+    left: 0.5vw;
+    color: white;
+    transition: 0.6s ease;
+    cursor: pointer;
+}
+.next {
+    position: absolute;
+    width:auto;
+    top: 19vh;
+    right: 1vw;
+    color: white;
+    transition: 0.6s ease ;
+    cursor: pointer;
+}
+.previous:hover, .next:hover {
+    background-color: grey;
+    color: black;
+  }
