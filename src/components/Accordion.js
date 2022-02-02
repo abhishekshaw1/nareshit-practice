@@ -7,14 +7,14 @@ const Accordion = (props) => {
     const [showIndex, setShowIndex ] =  useState(0) ;
 
     const handleShow = (e) => {
-        setShowIndex(e.target.id) ;
+        setShowIndex(Math.round(Number(e.target.id))) ;
     }
     
     return (
         <div className="accordian-container">
             {
                 players.map((player, index) => {
-                    return <AccordionItem key={index} index={index} data={player} showItem={showIndex == index} handleShow={handleShow}/> 
+                    return <AccordionItem key={index} index={index} data={player} showItem={showIndex === index} handleShow={handleShow}/> 
                 })
             }
         </div>
