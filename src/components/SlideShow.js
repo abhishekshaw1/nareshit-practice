@@ -1,21 +1,22 @@
-import React ,{useState, useEffect,useRef} from "react"
+import React, { useState, useEffect, useRef } from "react"
 import "../styles/slideShow.css"
 import SlideShowItem from "./SlideShowItem"
 const SlideShow = () => {
     let imagesSource = [
         {
-            url : "https://spiderimg.amarujala.com/assets/images/2022/01/15/750x506/virat-kohli_1642185053.jpeg"
-        },{
-            url : "https://image.cnbcfm.com/api/v1/image/103135046-GettyImages-110022758.jpg?v=1446585058"
-        },{
+            url: "https://spiderimg.amarujala.com/assets/images/2022/01/15/750x506/virat-kohli_1642185053.jpeg"
+        }, {
+            url: "https://image.cnbcfm.com/api/v1/image/103135046-GettyImages-110022758.jpg?v=1446585058"
+        }, {
             url: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202008/post_image_20842b4.jpeg?KjKZll3Ng64PME_nN86a4SRjpf0EKjcx&size=770:433"
         }
     ];
-    let length = imagesSource.length ;
-    const [slideIndex, setSlideIndex] = useState(0); 
-    let timer = useRef(null) ;
+    let length = imagesSource.length;
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    let timer = useRef(null);
     const clearInterval = () => {
-        if(timer.current){
+        if (timer.current) {
             clearTimeout(timer);
         }
     }
@@ -23,40 +24,41 @@ const SlideShow = () => {
     useEffect(() => {
         clearInterval();
         timer.current = setTimeout(() => {
-            setSlideIndex((prevSlideIndex) => prevSlideIndex === length - 1 ? 0 : prevSlideIndex + 1) 
-        },2000);
+            setSlideIndex((prevSlideIndex) => prevSlideIndex === length - 1 ? 0 : prevSlideIndex + 1)
+        }, 2000);
 
         return () => {
             clearInterval();
         }
-    },[slideIndex]);
+    }, [slideIndex,length]);
+
     const handlePrevious = () => {
-        if(slideIndex === 0 ){
+        if (slideIndex === 0) {
             setSlideIndex(length - 1);
-        }else{
+        } else {
             setSlideIndex((prevSlideIndex) => prevSlideIndex - 1);
         }
     }
     const handleNext = () => {
-        if(slideIndex === length - 1 ){
+        if (slideIndex === length - 1) {
             setSlideIndex(0);
-        }else{
+        } else {
             setSlideIndex((prevSlideIndex) => prevSlideIndex + 1);
         }
     }
-    
-return (
-    <div className="slideShow-Container">
-        SlideShow component
-        {
-            imagesSource.map((element,index) => {
-                return <SlideShowItem show={slideIndex === index} key={index} data={element} index={index}/>
-            })
-        }
-        <a href="#" onClick={handlePrevious}className="previous">&#10094;</a>
-        <a href="#" onClick={handleNext} className="next">&#10095;</a>
-    </div>
-);
+
+    return (
+        <div className="slideShow-Container">
+            SlideShow component
+            {
+                imagesSource.map((element, index) => {
+                    return <SlideShowItem show={slideIndex === index} key={index} data={element} index={index} />
+                })
+            }
+            <span onClick={handlePrevious} className="previous">&#10094;</span>
+            <span onClick={handleNext} className="next">&#10095;</span>
+        </div>
+    );
 }
 
-export default SlideShow ;
+export default SlideShow;
