@@ -14,7 +14,7 @@ const Accordion = (props) => {
         <div className="accordian-container">
             {
                 players.map((player, index) => {
-                    return <AccordionItem key={index} index={index} data={player} showItem={showIndex == index} handleShow={handleShow}/> 
+                    return <AccordionItem key={index} index={index} data={player} showItem={showIndex === index} handleShow={handleShow}/> 
                 })
             }
         </div>
