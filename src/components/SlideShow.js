@@ -17,7 +17,7 @@ const SlideShow = () => {
     let timer = useRef(null);
     const clearInterval = () => {
         if (timer.current) {
-            clearTimeout(timer);
+            clearTimeout(timer.current);
         }
     }
 
