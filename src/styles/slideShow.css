@@ -1,7 +1,8 @@
 .slideShow-Container{
-    width: 70vw;
-    height: 40vh;
-    border: 1px solid red ;
+    width: 54vw;
+    height: 66vh;
+    margin: 1vh auto;
+    border: 1px solid red;
     position: relative;
 }
 .player-slideshow-hidden {display: none}
@@ -17,18 +18,18 @@ img {vertical-align: middle;}
 .previous {
     position: absolute;
     width:auto;
-    top: 19vh;
-    left: 0.5vw;
-    color: white;
+    top: 34vh;
+    left: 1vw;
+    color: black;
     transition: 0.6s ease;
     cursor: pointer;
 }
 .next {
     position: absolute;
     width:auto;
-    top: 19vh;
+    top: 34vh;
     right: 1vw;
-    color: white;
+    color: black;
     transition: 0.6s ease ;
     cursor: pointer;
 }
