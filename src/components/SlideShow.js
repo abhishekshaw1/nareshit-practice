@@ -1,4 +1,4 @@
-import React ,{useState, useEffect} from "react"
+import React ,{useState, useEffect,useRef} from "react"
 import "../styles/slideShow.css"
 import SlideShowItem from "./SlideShowItem"
 const SlideShow = () => {
@@ -13,16 +13,16 @@ const SlideShow = () => {
     ];
     let length = imagesSource.length ;
     const [slideIndex, setSlideIndex] = useState(0); 
-    let timer ;
+    let timer = useRef(null) ;
     const clearInterval = () => {
-        if(timer){
+        if(timer.current){
             clearTimeout(timer);
         }
     }
 
     useEffect(() => {
         clearInterval();
-        timer = setTimeout(() => {
+        timer.current = setTimeout(() => {
             setSlideIndex((prevSlideIndex) => prevSlideIndex === length - 1 ? 0 : prevSlideIndex + 1) 
         },2000);
 
@@ -50,11 +50,11 @@ return (
         SlideShow component
         {
             imagesSource.map((element,index) => {
-                return <SlideShowItem show={slideIndex == index} key={index} data={element}/>
+                return <SlideShowItem show={slideIndex === index} key={index} data={element} index={index}/>
             })
         }
-        <a onClick={handlePrevious}className="previous">&#10094;</a>
-        <a onClick={handleNext} className="next">&#10095;</a>
+        <a href="#" onClick={handlePrevious}className="previous">&#10094;</a>
+        <a href="#" onClick={handleNext} className="next">&#10095;</a>
     </div>
 );
 }
