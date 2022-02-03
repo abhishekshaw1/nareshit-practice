@@ -14,7 +14,6 @@ class Snackbar extends React.Component {
         }
         this.handleShowToast = this.handleShowToast.bind(this);
         this.clearinterval=  this.clearinterval.bind(this);
-        let timer ;
     }
 
     clearinterval () {
