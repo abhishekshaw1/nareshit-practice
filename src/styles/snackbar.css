@@ -1,0 +1,22 @@
+.toast-parent {
+    position: relative;
+}
+
+.tost-container {
+    width: 22vw;
+    height: 19vh;
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0px;
+    /* left: 1%; */
+    right: 2%;
+    background: limegreen;
+    color: white;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    transition-timing-function: ease-in;
+}
+
+.try {
+
+}
