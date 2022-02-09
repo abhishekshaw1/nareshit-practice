@@ -3,6 +3,7 @@ import Accordion from "./components/Accordion"
 import SlideShow from "./components/SlideShow"
 import Modal from "./components/modal/Modal"
 import Snackbar from "./components/Snackbar/Snackbar"
+import Getdata from  "./components/axios/GetData"
 
 let data = [ {
   name: "sachin" ,
@@ -20,6 +21,7 @@ let data = [ {
 function App() {
   return (
     <div>
+      <Getdata />
       <Modal />
       <SlideShow />
       <Accordion data={data} />
