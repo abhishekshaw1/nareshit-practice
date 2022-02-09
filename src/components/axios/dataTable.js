@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Pagination from "./Pagination"
 
 const DataTable = (props) => {
-    const [postsPerpage, setPostsPerpage] = useState(10);
+    const [postsPerpage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
     const [activePage, setActivePage] = useState(1);
 
